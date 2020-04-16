@@ -1,8 +1,9 @@
 package tests;
 
+import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
-import steps.MoodSteps;
 
+@Log4j2
 public class MoodTest extends BaseTest{
 
     @Test (description = "Updating mood")

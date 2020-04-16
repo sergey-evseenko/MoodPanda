@@ -1,12 +1,14 @@
 package steps;
 
+import lombok.extern.log4j.Log4j2;
 import pages.FeedPage;
 import pages.LoginPage;
 import pages.MoodModal;
 import pages.MyFeedPage;
 
-import static com.codeborne.selenide.Selenide.sleep;
+//import static com.codeborne.selenide.Selenide.sleep;
 
+@Log4j2
 public class MoodSteps {
 
     LoginPage loginPage;
@@ -25,6 +27,7 @@ public class MoodSteps {
     public MoodSteps login(String user, String password){
         loginPage.openPage();
         loginPage.login(user, password);
+        log.info(String.format("Trying to login with email %s and password %s.", user, password));
         feedPage.isPageOpen();
         return this;
     }
@@ -35,6 +38,7 @@ public class MoodSteps {
         moodModal.updateDetails(moodRating, description, date);
         moodModal.clickUpdateMood();
         moodModal.toDiary();
+        log.info("Diary page was opened.");
         //TODO validate that diary page is opened
         return this;
 

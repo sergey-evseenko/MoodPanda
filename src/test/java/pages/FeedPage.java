@@ -1,18 +1,19 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selectors;
-import org.openqa.selenium.By;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Selenide.*;
 
+@Log4j2
 public class FeedPage {
 
     String UPDATE_MOOD_ID = "#LinkUpdate";
 
     public FeedPage isPageOpen(){
         $(UPDATE_MOOD_ID).waitUntil(Condition.visible, 30000);
+        log.info("Login was success.");
         return this;
     }
 
