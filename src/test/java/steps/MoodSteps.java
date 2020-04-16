@@ -39,7 +39,6 @@ public class MoodSteps {
         moodModal.clickUpdateMood();
         moodModal.toDiary();
         log.info("Diary page was opened.");
-        //TODO validate that diary page is opened
         return this;
 
     }
